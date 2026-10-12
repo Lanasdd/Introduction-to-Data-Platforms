@@ -58,6 +58,7 @@
 
 ```bash
 scp script.sh team@2.59.81.13:~/
+```
 
 ### 2. Зайти на edge и открыть tmux
 
