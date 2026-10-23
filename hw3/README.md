@@ -55,12 +55,14 @@ scp script.sh team@2.59.81.13:~/
 2. Зайти на edge, tmux
    
 ssh team@2.59.81.13
+
 tmux new -s hive
 
 3. Проверить, что мы на нужном узле (metastore/HS2 поднимаются локально,
 а hive.metastore.uris и JDBC_URL указывают на team-10-en)
 
 hostname
+
 getent hosts team-10-en
 
 5. Запустить
@@ -70,5 +72,6 @@ bash script.sh
 5. Проверка Hive
    
 beeline -u "jdbc:hive2://team-10-en:10000" -n team -e "SHOW PARTITIONS hw3.sales"
+
 beeline -u "jdbc:hive2://team-10-en:10000" -n team \
   -e "SELECT sale_year, count(*) FROM hw3.sales GROUP BY sale_year"
